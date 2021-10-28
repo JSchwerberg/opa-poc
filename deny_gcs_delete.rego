@@ -8,7 +8,8 @@ array_contains(arr, elem) {
   arr[_] = elem
 }
 
-deny["Additional approval needed for resource destruction"] {
+deny["Approval required to destroy Google Storage Buckets"] {
     resource := tfplan.resource_changes[_]
     array_contains(resource.change.actions, "delete")
+    resource.type = "google_storage_bucket"
 }

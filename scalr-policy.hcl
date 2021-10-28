@@ -1,6 +1,11 @@
 version = "v1"
 
-policy "approval_for_delete" {
+policy "deny_delete" {
+  enabled           = true
+  enforcement_level = "advisory"
+}
+
+policy "deny_gcs_delete" {
   enabled           = true
   enforcement_level = "soft-mandatory"
 }
