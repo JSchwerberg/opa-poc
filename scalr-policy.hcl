@@ -7,5 +7,5 @@ policy "deny_delete" {
 
 policy "deny_gcs_delete" {
   enabled           = true
-  enforcement_level = "hard-mandatory"
+  enforcement_level = "soft-mandatory"
 }
