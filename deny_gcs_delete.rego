@@ -13,5 +13,6 @@ deny[reason] {
     array_contains(resource.change.actions, "delete")
     resource.type = "google_storage_bucket"
 
-    reason := sprintf("%-40s :: Must not delete GCS buckets")
+    reason := sprintf("%-40s :: Must not delete GCS buckets",
+      resource.address)
 }
